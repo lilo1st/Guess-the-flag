@@ -4,9 +4,11 @@
     margin: 0;
     padding: 0;
     font-family: 'poppins' , arial;
+    
 }
 body{
     background-color: #F2F2F2;
+
 }
 .menu{
     display: grid;
@@ -33,3 +35,42 @@ body{
     color: #9E9E9E;
 }
 
+.centro{
+    display: grid;
+    padding-top: clamp(10px, 10vh, 80px);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    'cima'
+    'baixo'
+    ;
+}
+
+.img_bandeira{
+    display: flex;
+    grid-area: 'cima';
+    align-items: center;
+    justify-content: center;
+
+}
+.button{
+    width: clamp(10px, 45vw, 150px);
+    height: clamp(20px, 5vh, 50px);
+}
+.opcoes {
+    margin-top:clamp(25px, 10vh, 65px) ;
+    display: flex;
+    grid-area: 'baixo';
+    flex-wrap: wrap;
+    justify-self: center; 
+    gap: 10px; 
+    width: 100%;
+    height: 100%;
+    max-width: 300px; 
+}
+
+.button {
+    flex: 1 1 calc(50% - 10px); 
+    max-width: 250px; 
+    height: clamp(40px, 10vh, 80px);
+    font-size: 1rem;
+}
