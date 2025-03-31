@@ -62,7 +62,7 @@ body{
     grid-area: 'baixo';
     flex-wrap: wrap;
     justify-self: center; 
-    gap: 10px; 
+    gap: 5px 20px; 
     width: 100%;
     height: 100%;
     max-width: 300px; 
