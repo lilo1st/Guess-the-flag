@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <!-- Cabeçario -->
+    <header class="menu">
+
+        <nav>
+            <ul>
+
+                <!-- Pontuação -->
+                <li id="pts">PTS <span id="pts_jogo">0 </span> <span id="resposta"></span></li>
+
+                <!-- Imagem da bandeira -->
+                <li id="img_logo"><img src="img/Logo_jogo.svg"></li>
+
+                <!-- cronometro sem função/ainda -->
+                <li id="cronometro">00:00</li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+<!-- 
+    Parte principal do jogo
+     -->
+
+     <div class="centro">
+        <img id="bandeira"> 
+
+        <!-- Tirar depois -->
+        <h2 id="pais_sort"></h2>
+
+        <!-- Resposta do cliente -->
+        <form>
+
+            <!-- Text box com a Resposta -->
+            <input type="text" placeholder="Qual é o país?" id="pais">
+
+            <!-- Butao para enviar -->
+            <input type="submit" value="Enviar">
+
+        </form>
+     </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
