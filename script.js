@@ -14,9 +14,6 @@ let nomeButtons = [];//lista para colocar os paises
 //.flags.png; caminho da bandeira
 //.translations.por.common; caminho para achar o país
 
-document.addEventListener("DOMContentLoaded", () =>{
-    sortPais() //pais pt
-})
 
 function sortPais(){
     // Limpar lista de nomes de países
@@ -55,10 +52,10 @@ function sortPais(){
             button.textContent = nomeButtons[index].translations.por.common;
 
             // Remove qualquer ouvinte de evento antigo
-            button.removeEventListener("click", handleClick);
+            button.removeEventListener("click", ponts);
             
             // Adiciona evento de clique para verificar a resposta
-            button.addEventListener("click", handleClick);
+            button.addEventListener("click", ponts);
         });
 
         // Atualiza a bandeira no HTML
@@ -66,8 +63,22 @@ function sortPais(){
     });
 }
 
+function button(){
+    botoes.forEach((button) =>{
+
+        if ( button.textContent=== pais){
+            button.style.background = "#2ECC71"
+            
+            setTimeout(() => {
+                button.style.background = ""
+            }, 100);
+        }
+    
+    })
+}
+
 // Função para verificar a resposta
-function handleClick(event) {
+function ponts(event) {
     let botaoClick = event.target.textContent;
 
     if (botaoClick === pais) {
@@ -84,6 +95,11 @@ function handleClick(event) {
     // Sorteia um novo país após a resposta
     setTimeout(() => {
         pontuacaoElemento.style.color = "";
+        button()
         sortPais()
-    }, 50);
+    }, 100);
 }
+
+document.addEventListener("DOMContentLoaded", () =>{
+    sortPais() //pais pt
+})
