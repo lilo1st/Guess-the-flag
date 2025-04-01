@@ -37,7 +37,7 @@ body{
 
 .centro{
     display: grid;
-    padding-top: clamp(10px, 10vh, 80px);
+    padding-top: clamp(10px, 17vh, 220px);
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     'cima'
@@ -50,11 +50,15 @@ body{
     grid-area: 'cima';
     align-items: center;
     justify-content: center;
+    margin-bottom: clamp(25px, 2vh, 34px);
 
 }
 
 #bandeira{
-    width: clamp(80px, 35%, 400px);
+    width: clamp(80px, 25vw, 400px);
+    height: clamp(60px, 25.235vh, 350px);
+    max-width: 400px;
+    max-height: 350px;
 }
 
 #img_logo img{
@@ -71,7 +75,7 @@ body{
     height: clamp(20px, 5vh, 50px);
 }
 .opcoes {
-    margin-top:clamp(25px, 10vh, 65px) ;
+    
     display: flex;
     grid-area: 'baixo';
     flex-wrap: wrap;
@@ -85,7 +89,7 @@ body{
 
 .button {
     flex: 1 1 40%; 
-    height: 60px;
+    height: clamp(30px, 7vh, 90px);
     text-align: center;
     display: flex;
     align-items: center;
