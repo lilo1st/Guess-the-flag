@@ -56,9 +56,10 @@ body{
 
 #bandeira{
     width: clamp(80px, 25vw, 400px);
-    height: clamp(60px, 25.235vh, 350px);
+    height: clamp(30px, 25.235vh, 350px);
     max-width: 400px;
     max-height: 350px;
+    border: 3px solid #000000 ;
 }
 
 #img_logo img{
@@ -72,7 +73,7 @@ body{
 
 .button{
     width: clamp(10px, 45vw, 150px);
-    height: clamp(20px, 5vh, 50px);
+    height: clamp(30px, 7vh, 90px);
 }
 .opcoes {
     
@@ -89,7 +90,6 @@ body{
 
 .button {
     flex: 1 1 40%; 
-    height: clamp(30px, 7vh, 90px);
     text-align: center;
     display: flex;
     align-items: center;
