@@ -41,7 +41,7 @@ function sortPais(){
             randomIndex = Math.floor(Math.random() * data.length);
             let opcaoSorteada = data[randomIndex];
 
-            // Garante que não haverá repetição de países
+            // se a resposta do includes for verdadeira volta como fall
             if (!nomeButtons.includes(opcaoSorteada)) {
                 nomeButtons.push(opcaoSorteada);
             }
@@ -61,7 +61,7 @@ function sortPais(){
             button.addEventListener("click", handleClick);
         });
 
-        // Atualiza a bandeira e nome do país no HTML
+        // Atualiza a bandeira no HTML
         img.src = bandeira;
     });
 }
@@ -85,5 +85,5 @@ function handleClick(event) {
     setTimeout(() => {
         pontuacaoElemento.style.color = "";
         sortPais()
-    }, 250);
+    }, 50);
 }
