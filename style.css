@@ -52,6 +52,20 @@ body{
     justify-content: center;
 
 }
+
+#bandeira{
+    width: clamp(80px, 35%, 400px);
+}
+
+#img_logo img{
+    width: clamp(20px, 9.2vw, 195px);
+   
+}
+
+#img_logo{
+    margin-bottom: clamp(5px, 4vh, 15px);
+}
+
 .button{
     width: clamp(10px, 45vw, 150px);
     height: clamp(20px, 5vh, 50px);
