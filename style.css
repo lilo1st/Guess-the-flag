@@ -54,6 +54,7 @@ body{
 
 }
 
+/* Bandeiera imagem */
 #bandeira{
     width: clamp(300px, 25vw, 400px);
     height: clamp(30px, 25.235vh, 350px);
