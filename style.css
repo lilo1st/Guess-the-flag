@@ -26,7 +26,8 @@ body{
 }
 
 .menu #pts, #cronometro{
-    margin-top: clamp(8px, 8vh, 27px);
+    margin-top: clamp(3px, 2.45vh, 27px);
+    font-size: clamp(3px, 2.45vh, 18px);
     padding: 0 2vw;
     font-weight: 450;
 }
@@ -63,8 +64,9 @@ body{
     border: 3px solid #000000 ;
 }
 
+/* Imagem logo */
 #img_logo img{
-    width: clamp(163px, 9.2vw, 195px);
+    width: clamp(100px, 9.2vw, 195px);
    
 }
 
