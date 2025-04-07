@@ -10,57 +10,71 @@ let botoes = document.querySelectorAll('.button'); // Resposta do cliente
 let pontuacaoElemento = document.getElementById('pts_jogo'); //Valor do pts
 let pontuacao = 0; 
 let nomeButtons = [];//lista para colocar os paises
+let randomIndex= [];
+let paisSorteado= [];
+let paises = [];
 
 //.flags.png; caminho da bandeira
 //.translations.por.common; caminho para achar o país
 
 
+//pegar todos os dados da API e Amazerna dentro de uma variavel
+fetch('https://restcountries.com/v2/all')
+    .then(response => response.json())
+    .then(data => {
+        paises = data;
+        sortPais()
+        
+    });
+
+//Sortear os Paises
+
 function sortPais(){
     // Limpar lista de nomes de países
     nomeButtons = [];
-    
-    //pegar todas as bandeiras
-    fetch('https://restcountries.com/v2/all')
-    .then(response => response.json())
-    .then(data => {
-        
-        // Sorteia um país correto
-        let randomIndex = Math.floor(Math.random() * data.length);
-        let paisSorteado = data[randomIndex];
 
-        pais = paisSorteado.translations?.pt; // Nome do país
-        bandeira = paisSorteado.flag; // URL da bandeira
+    // Sorteia um país correto
+    randomIndex = Math.floor(Math.random() * paises.length);
+    paisSorteado = paises[randomIndex];
 
-        // Adiciona o país correto à lista de opções
-        nomeButtons.push(paisSorteado);
+    pais = paisSorteado.translations?.pt; // Nome do país
+    bandeira = paisSorteado.flag; // URL da bandeira
 
-        while (nomeButtons.length < 4) {
-            randomIndex = Math.floor(Math.random() * data.length);
-            let opcaoSorteada = data[randomIndex];
+    // Adiciona o país correto à lista de opções
+    nomeButtons.push(paisSorteado);
 
-            // se a resposta do includes for verdadeira volta como fall
-            if (!nomeButtons.includes(opcaoSorteada)) {
-                nomeButtons.push(opcaoSorteada);
-            }
+    //Enquanto nomeButtons for menor que 4
+    while (nomeButtons.length < 4) {
+
+        //posição
+        randomIndex = Math.floor(Math.random() * paises.length);
+
+        //pais sorteado
+        let opcaoSorteada = paises[randomIndex];
+
+        // se a resposta do includes for verdadeira volta como false
+        if (!nomeButtons.includes(opcaoSorteada)) {
+            nomeButtons.push(opcaoSorteada);
         }
+    }
 
-        // Embaralha as opções de países, incluindo o correto
-        nomeButtons.sort(() => Math.random() - 0.5);
+    // Embaralha as opções de países, incluindo o correto
+    nomeButtons.sort(() => Math.random() - 0.5);
 
-        // Atualiza os botões com os nomes sorteados
-        botoes.forEach((button, index) => {
-            button.textContent = nomeButtons[index].translations?.pt;
+    // Atualiza os botões com os nomes sorteados
+    botoes.forEach((button, index) => {
+        button.textContent = nomeButtons[index].translations?.pt;
 
-            // Remove qualquer ouvinte de evento antigo
-            button.removeEventListener("click", ponts);
-            
-            // Adiciona evento de clique para verificar a resposta
-            button.addEventListener("click", ponts);
-        });
-
-        // Atualiza a bandeira no HTML
-        img.src = bandeira;
+        // Remove qualquer ouvinte de evento antigo
+        button.removeEventListener("click", ponts);
+        
+        // Adiciona evento de clique para verificar a resposta
+        button.addEventListener("click", ponts);
     });
+
+    // Atualiza a bandeira no HTML
+    img.src = bandeira;
+    
 }
 
 function button(){
@@ -101,5 +115,5 @@ function ponts(event) {
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
-    sortPais() //pais pt
+
 })
