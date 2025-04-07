@@ -20,7 +20,7 @@ function sortPais(){
     nomeButtons = [];
     
     //pegar todas as bandeiras
-    fetch('https://restcountries.com/v3.1/all')
+    fetch('https://restcountries.com/v2/all')
     .then(response => response.json())
     .then(data => {
         
@@ -28,8 +28,8 @@ function sortPais(){
         let randomIndex = Math.floor(Math.random() * data.length);
         let paisSorteado = data[randomIndex];
 
-        pais = paisSorteado.translations.por.common; // Nome do país
-        bandeira = paisSorteado.flags.png; // URL da bandeira
+        pais = paisSorteado.translations.pt; // Nome do país
+        bandeira = paisSorteado.flag; // URL da bandeira
 
         // Adiciona o país correto à lista de opções
         nomeButtons.push(paisSorteado);
@@ -49,7 +49,7 @@ function sortPais(){
 
         // Atualiza os botões com os nomes sorteados
         botoes.forEach((button, index) => {
-            button.textContent = nomeButtons[index].translations.por.common;
+            button.textContent = nomeButtons[index].translations.br;
 
             // Remove qualquer ouvinte de evento antigo
             button.removeEventListener("click", ponts);
