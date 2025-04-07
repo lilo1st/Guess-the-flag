@@ -28,7 +28,7 @@ function sortPais(){
         let randomIndex = Math.floor(Math.random() * data.length);
         let paisSorteado = data[randomIndex];
 
-        pais = paisSorteado.translations.pt; // Nome do país
+        pais = paisSorteado.translations?.pt; // Nome do país
         bandeira = paisSorteado.flag; // URL da bandeira
 
         // Adiciona o país correto à lista de opções
@@ -49,7 +49,7 @@ function sortPais(){
 
         // Atualiza os botões com os nomes sorteados
         botoes.forEach((button, index) => {
-            button.textContent = nomeButtons[index].translations.br;
+            button.textContent = nomeButtons[index].translations?.pt;
 
             // Remove qualquer ouvinte de evento antigo
             button.removeEventListener("click", ponts);
