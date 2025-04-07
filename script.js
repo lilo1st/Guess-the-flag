@@ -114,6 +114,4 @@ function ponts(event) {
     }, 100);
 }
 
-document.addEventListener("DOMContentLoaded", () =>{
 
-})
