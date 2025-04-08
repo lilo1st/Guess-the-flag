@@ -57,12 +57,11 @@ body{
 
 /* Bandeiera imagem */
 #bandeira{
-    width: clamp(300px, 27vw, 400px);
-    height: clamp(170px, 29.235vh, 350px);
-    display: grid;
+    width: clamp(300px, 25vw, 400px);
+    height: clamp(170px, 25.235vh, 350px);
     max-width: 400px;
     max-height: 350px;
-
+    border: 3px solid #000000 ;
 }
 
 /* Imagem logo */
@@ -108,4 +107,82 @@ body{
     color: #F2F2F2;
     border: none;
     font-weight: 450;
+}
+
+/* Login */
+input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 315px;
+
+}
+
+/* GTF Center*/
+#img_logoc{
+    display: grid;
+    justify-content: center;
+    margin-top: 240px;
+
+
+
+}
+#img_logoc img{
+    width: 400px
+
+}
+
+
+.seu_nome{
+    display: grid;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+#img_logo{
+    display: grid;
+    justify-content: center;
+}
+
+
+
+label {
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #008cffb0;   
+    margin-bottom: 5px;  
+    display: inline-block; 
+}
+  
+  
+input[type="text"] {
+    width: 100%;            
+    padding: 10px;         
+    font-size: 14px;      
+    border: 1px solid #ccc; 
+    border-radius: 4px;    
+    box-sizing: border-box;  
+    margin-bottom: 10px;   
+}
+  
+
+input[type="text"]::placeholder {
+    color: #008cffb0;       
+    font-style: italic;  
+}
+  
+
+input[type="text"]:focus {
+    border-color: #66afe9;  
+    outline: none;    
+}
+
+
+ul{
+    display: grid;
+    justify-content: center;
+    margin-left: 880px;
+
 }
